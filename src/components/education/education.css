@@ -1,0 +1,72 @@
+#education h5 {
+    margin-top: -60px;
+	margin-left: 40px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#education h1 {
+	margin-left: 40px;
+	margin-top: 10px;
+	font-size: 40px;
+    font-weight: bold;
+}
+
+.education_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+	padding-top: 20px;
+}
+
+.education_item {
+    width: 300px;
+    margin: 1rem;
+    border-radius: 12px;
+    box-shadow: 4px 6px 6px 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--secondary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.education_item img {
+    width: 100%;
+    display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+}
+
+#bullied img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+}
+
+#students img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+}
+
+#teacher img {
+	width: 170px;
+	height: 200px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+}
+
+.education_item h3 {
+	display: block;
+    align-items: center;
+	text-align: center;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+	margin-top: 20px;
+	margin-bottom: 8px;
+	text-align: center;
+}
