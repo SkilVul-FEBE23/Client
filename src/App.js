@@ -1,18 +1,17 @@
-import Slider from './components/slider/Slider';
 import Navbar from './components/navbar/Navbar';
-import Event from './components/event/Event';
-import ProductList from './components/productList/ProductList';
 import Footer from './components/footer/Footer';
+import Home from './pages/Home';
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <>
+    <div>
     <Navbar/>
-    <Slider/>
-    <Event/>
-    <ProductList/>
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+    </Routes>
     <Footer/>
-    </>
+    </div>
   );
 }
 

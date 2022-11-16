@@ -45,6 +45,7 @@ section{
         text-decoration: none;
         padding: 10px 12px;
         border-radius: 10px;
+        font-size: 1.5rem;
     }
     .ctn:hover{
         background-color: whitesmoke;

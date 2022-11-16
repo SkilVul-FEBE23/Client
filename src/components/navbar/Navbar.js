@@ -34,7 +34,7 @@ function NavBar() {
                 className="nav-links"
                 onClick={handleClick}
               >
-                About
+                GetHelp
               </NavLink>
             </li>
             <li className="nav-item">
@@ -45,18 +45,7 @@ function NavBar() {
                 className="nav-links"
                 onClick={handleClick}
               >
-                Portofolio
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                exact
-                to="/Blog"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                Blog
+                Education
               </NavLink>
             </li>
           </ul>

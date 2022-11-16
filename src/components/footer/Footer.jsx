@@ -1,43 +1,45 @@
 import React from "react";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer class="footer-distributed">
-      <div class="footer-left">
+    <footer className="footer-distributed">
+      <div className="footer-left">
         <h3>BeraniMelawan.Co</h3>
 
-        <p class="footer-links">
-          <a href="#">Home</a>|<a href="#">GetHelp</a>|<a href="#">Education</a>
-          |<a href="#">Blog</a>
+        <p className="footer-links">
+          <Link to={""}>Home|</Link>
+          <Link to={""}>GetHelp|</Link>
+          <Link to={""}>Education|</Link>
         </p>
 
-        <p class="footer-company-name">
+        <p className="footer-company-name">
           Copyright © 2021 <strong>BeraniMelawan.Co</strong> All rights reserved
         </p>
       </div>
 
-      <div class="footer-center">
+      <div className="footer-center">
         <div>
-          <i class="fa fa-map-marker"></i>
+          <i className="fa fa-map-marker"></i>
           <p>
             <span>Jakarta</span>
           </p>
         </div>
 
         <div>
-          <i class="fa fa-phone"></i>
+          <i className="fa fa-phone"></i>
           <p>+62-54545-5454</p>
         </div>
         <div>
-          <i class="fa fa-envelope"></i>
+          <i className="fa fa-envelope"></i>
           <p>
             <a href="#">BeraniMelawan@gmail.com</a>
           </p>
         </div>
       </div>
-      <div class="footer-right">
-        <p class="footer-company-about">
+      <div className="footer-right">
+        <p className="footer-company-about">
           <span>About the company</span>
           <strong>BeraniMelawan.Co</strong> adalah sebuah platform/wadah
           berbasis web yang mana bertujuan untuk membantu para korban bulliying
@@ -45,22 +47,22 @@ const Footer = () => {
           diberi beberapa metode yang telah kami buat di website yang telah kami
           buat ini
         </p>
-        <div class="footer-icons">
-          <a href="#">
-            <i class="fa fa-facebook"></i>
-          </a>
-          <a href="#">
-            <i class="fa fa-instagram"></i>
-          </a>
-          <a href="#">
-            <i class="fa fa-linkedin"></i>
-          </a>
-          <a href="#">
-            <i class="fa fa-twitter"></i>
-          </a>
-          <a href="#">
-            <i class="fa fa-youtube"></i>
-          </a>
+        <div className="footer-icons">
+          <Link to={""}>
+            <i className="fa fa-instagram"></i>
+          </Link>
+          <Link to={""}>
+            <i className="fa fa-facebook"></i>
+          </Link>
+          <Link to={""}>
+            <i className="fa fa-linkedin"></i>
+          </Link>
+          <Link to={""}>
+            <i className="fa fa-twitter"></i>
+          </Link>
+          <Link to={""}>
+            <i className="fa fa-youtube"></i>
+          </Link>
         </div>
       </div>
     </footer>
