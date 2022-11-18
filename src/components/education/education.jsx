@@ -8,17 +8,20 @@ const data = [
     {
         id: 1,
         image: img1,
-        title: 'I am Being Bullied'
+        title: 'I am Being Bullied',
+        link: '/education/bullied'
     },
     {
         id: 2,
         image: img2,
-        title: 'I am a Students'
+        title: 'I am a Students',
+        link: '/education/students'
     },
     {
         id: 3,
         image: img3,
-        title: 'I am a Teacher'
+        title: 'I am a Teacher',
+        link: '/education/teacher'
     }
 ]
 
@@ -31,13 +34,13 @@ function Education () {
 
             <div className="education_container">
                 {
-                    data.map (({id, image, title}) => {
+                    data.map (({id, image, title, link}) => {
                         return (
                             <article key={id} className="education_item">
                                 <div className="education_item-image">
                                     <img src={image} alt={title} />
                                 </div>
-                                <h3>{title}</h3>
+                                <h3><a href={link}>{title}</a></h3>
                             </article>
                         )
                     })
