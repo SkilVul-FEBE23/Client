@@ -15,7 +15,7 @@ const Footer = () => {
         </p>
 
         <p className="footer-company-name">
-          Copyright © 2021 <strong>BeraniMelawan.Co</strong> All rights reserved
+          Copyright © 2022 <strong>BeraniMelawan.Co</strong> All rights reserved
         </p>
       </div>
 
@@ -34,7 +34,7 @@ const Footer = () => {
         <div>
           <i className="fa fa-envelope"></i>
           <p>
-            <a href="#">Melawan@gmail.com</a>
+            <a href="#">BeraniMelawan@gmail.com</a>
           </p>
         </div>
       </div>
