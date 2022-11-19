@@ -9,6 +9,8 @@ import BulliedQuiz from './components/quiz/bulliedQuiz';
 import Teacher from './components/education/teacher';
 import StudentsQuiz from './components/quiz/studentsQuiz';
 import TeacherQuiz from './components/quiz/teacherQuiz';
+import Gethelp from './pages/Gethelp';
+import Detail from './pages/Detail';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
     <Navbar/>
     <Routes>
       <Route path='/' element={<Home/>}/>
+      <Route path="/Gethelp" element={<Gethelp/>} />
+      <Route path="/psikolog/:psikologId" element={<Detail/>} />
       <Route path='/education' element={<Education/>}/>
       <Route path='/education/bullied' element={<Bullied/>}/>
       <Route path='/education/students' element={<Students/>}/>
