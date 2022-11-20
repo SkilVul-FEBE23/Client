@@ -40,7 +40,7 @@ function Education () {
                                 <div className="education_item-image">
                                     <img src={image} alt={title} />
                                 </div>
-                                <h3><a href={link}>{title}</a></h3>
+                                <h3><a className="title-edu" href={link}>{title}</a></h3>
                             </article>
                         )
                     })
