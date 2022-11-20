@@ -9,13 +9,13 @@ const Footer = () => {
         <h3>BeraniMelawan.Co</h3>
 
         <p className="footer-links">
-          <Link to={""}>Home|</Link>
+          <Link to={"/"}>Home|</Link>
           <Link to={""}>GetHelp|</Link>
           <Link to={""}>Education|</Link>
         </p>
 
         <p className="footer-company-name">
-          Copyright © 2021 <strong>BeraniMelawan.Co</strong> All rights reserved
+          Copyright © 2022 <strong>BeraniMelawan.Co</strong> All rights reserved
         </p>
       </div>
 
@@ -23,18 +23,18 @@ const Footer = () => {
         <div>
           <i className="fa fa-map-marker"></i>
           <p>
-            <span>Jakarta</span>
+            <span>DKI Jakarta/Indonesia</span>
           </p>
         </div>
 
         <div>
           <i className="fa fa-phone"></i>
-          <p>+62-54545-5454</p>
+          <p>+62-5454-5454-889</p>
         </div>
         <div>
           <i className="fa fa-envelope"></i>
           <p>
-            <a href="#">BeraniMelawan@gmail.com</a>
+            <a href="#">Melawan@gmail.com</a>
           </p>
         </div>
       </div>

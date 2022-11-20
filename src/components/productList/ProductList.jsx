@@ -20,7 +20,7 @@ const ProductList = () => {
   return (
     <div className="pl">
       <div className="pl-texts">
-        <h1 className="pl-title">pengetahuan Bullying</h1>
+        <h1 className="pl-title">Pengetahuan Bullying</h1>
         <p className="pl-desc">
           Merupakan website pemerintahan yang berkaitan dengan bullying yang
           dapat anda baca dan pelajari.
