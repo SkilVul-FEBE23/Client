@@ -10,8 +10,8 @@ const Footer = () => {
 
         <p className="footer-links">
           <Link to={"/"}>Home|</Link>
-          <Link to={""}>GetHelp|</Link>
-          <Link to={""}>Education|</Link>
+          <Link to={"/Gethelp"}>GetHelp|</Link>
+          <Link to={"/education"}>Education|</Link>
         </p>
 
         <p className="footer-company-name">
@@ -34,7 +34,7 @@ const Footer = () => {
         <div>
           <i className="fa fa-envelope"></i>
           <p>
-            <a href="#">Melawan@gmail.com</a>
+            <Link to={"#"}>Melawan@gmail.com</Link>
           </p>
         </div>
       </div>

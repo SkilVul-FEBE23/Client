@@ -18,7 +18,7 @@ const Event = () => {
             Dengan adanya partner anda dapat bercerita tentang apa yang anda
             alami saat ini.
           </p>
-          <Link to={""} className="ctn">
+          <Link to={"Gethelp"} className="ctn">
             {" "}
             Cari Partner{" "}
           </Link>
@@ -30,7 +30,7 @@ const Event = () => {
             Pelajari lebih mendalam tentang bullying dan dapatkan infomasi
             terbaru.
           </p>
-          <Link to={""} className="ctn">
+          <Link to={"education"} className="ctn">
             {" "}
             Edukasi{" "}
           </Link>
