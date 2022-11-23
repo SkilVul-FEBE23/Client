@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink,Link } from "react-router-dom";
 import "./Navbar.css"
 
 function NavBar() {
@@ -48,6 +48,8 @@ function NavBar() {
                 Education
               </NavLink>
             </li>
+              <Link to={"/signup"} className="btn-text">Sign up</Link>
+              <Link to={"/Login"} className="btn-text">Login</Link>
           </ul>
           <div className="nav-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"}></i>

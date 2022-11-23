@@ -76,6 +76,20 @@
   .nav-icon {
     display: none;
   }
+  .btn-text{
+    background-color: #4552c5;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    margin-right: 2rem;
+}
+.btn-text:hover{
+    background-color: whitesmoke;
+    color: #4552c5;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.571);
+}
   
   @media screen and (max-width: 960px) {
     .nav-menu {
@@ -117,5 +131,10 @@
       cursor: pointer;
       color: #4053ff;
       z-index: 1000;
+    }
+    .btn-text{
+      width: 100%;
+      border-radius: 0;
+      line-height: 40px;
     }
   }
