@@ -11,6 +11,7 @@ import StudentsQuiz from './components/quiz/studentsQuiz';
 import TeacherQuiz from './components/quiz/teacherQuiz';
 import Gethelp from './pages/Gethelp';
 import Detail from './pages/Detail';
+import Rout from './pages/Rout';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
       <Route path='/education/students/studentsQuiz' element={<StudentsQuiz/>}/>
       <Route path='/education/students/teacherQuiz' element={<TeacherQuiz/>}/>
     </Routes>
+    <Rout/>
     <Footer/>
     </div>
   );
