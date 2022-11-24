@@ -1,7 +1,8 @@
 .signup {
   background-color: #7400b8;
-  padding: 1% 0;
+  padding: 2% 0;
   display: flex;
+  padding-right: 10%;
 }
 
 .signup-form {
@@ -117,4 +118,28 @@
   position: relative;
   left: 67%;
   margin-top: 200px;
+}
+
+@media screen and (max-width: 767px) {
+  .signup {
+    padding: 35% 0;
+    padding-right: 19%;
+  }
+
+  .img {
+    position: relative;
+    left: 10%;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+  .signup {
+    padding: 35% 0;
+    padding-right: 19%;
+  }
+
+  .img {
+    position: relative;
+    left: 20%;
+  }
 }
