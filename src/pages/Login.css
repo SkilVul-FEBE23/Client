@@ -1,0 +1,109 @@
+.login-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+}
+.login-input {
+  padding: 15% 8%;
+}
+
+.username,
+.password {
+  border: 1px solid white;
+  display: flex;
+  padding: 5px;
+  gap: 2px;
+  width: 300px;
+  background-color: rgb(234, 228, 228);
+  outline: none;
+  justify-content: flex-start;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+.username img,
+.password img {
+  margin-top: 8px;
+}
+
+.username .input-username {
+  border: 1px solid rgb(234, 228, 228);
+  width: 350px;
+  padding: 5px;
+  outline: none;
+  font-size: 20px;
+  background-color: rgb(234, 228, 228);
+}
+.username .input-username ::after {
+  border-style: hidden;
+}
+
+.password .input-password {
+  border: 1px solid white;
+  width: 350px;
+  padding: 5px;
+  outline: none;
+  font-size: 20px;
+  border: 1px solid rgb(234, 228, 228);
+  background-color: rgb(234, 228, 228);
+}
+
+.btn-login {
+  padding: 10px;
+  width: 90px;
+  text-align: center;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid #ffbd00;
+  background-color: #ffbd00;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.btn-login:hover {
+  cursor: pointer;
+}
+
+.form-body h2 {
+  color: black;
+}
+
+.create-acc {
+  margin-top: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.create-acc:hover {
+  cursor: pointer;
+  color: blue;
+}
+
+.form-text {
+  border: 1px solid black;
+  width: 600px;
+  background-color: #7400b8;
+  color: white;
+  padding: 17% 10%;
+  border-radius: 30px;
+}
+
+.form-text h2 {
+  margin-bottom: 20px;
+}
+
+.form-text h4 {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.form-text p {
+  color: #ffbd00;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.form-text img {
+  position: relative;
+}
