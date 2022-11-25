@@ -3,12 +3,12 @@ import "./Signup.css";
 import user1 from "../../img/user.png";
 import lock1 from "../../img/lock.png";
 import email from "../../img/email.png";
-import img from "../../img/img1.png";
+// import img from "../../img/img1.png";
 
 function Signup() {
   return (
     <div className="signup">
-      <img className="img" src={img} alt="" width="120px" height="350px" />
+      {/* <img className="img" src={img} alt="" width="120px" height="350px" /> */}
       <div className="signup-form">
         <h2>Create an account </h2>
 
@@ -25,7 +25,7 @@ function Signup() {
 
           <div className="password-signup">
             <img src={lock1} alt="" width="20px" height="18px" />
-            <input type="text" placeholder="Password" />
+            <input type="password" placeholder="Password" />
           </div>
 
           <button>Sign up</button>

@@ -2,7 +2,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 18px;
   }
   .login-input {
     padding: 15% 8%;
@@ -55,7 +54,6 @@
     text-align: center;
     border-radius: 10px;
     outline: none;
-    border: 1px solid #ffbd00;
     background-color: #ffbd00;
     font-weight: 600;
     font-size: 15px;
@@ -81,21 +79,22 @@
   }
   
   .form-text {
-    border: 1px solid black;
     width: 600px;
     background-color: #7400b8;
+    padding: 20px;
     color: white;
-    padding: 17% 10%;
     border-radius: 30px;
   }
   
   .form-text h2 {
     margin-bottom: 20px;
+    color: #fff;
   }
   
   .form-text h4 {
     margin-top: 20px;
     font-size: 20px;
+    color: #fff;
   }
   
   .form-text p {
@@ -111,6 +110,9 @@
   @media screen and (max-width: 767px) {
     .form-text {
       padding: 18px 50px;
+    }
+    .form-text{
+      display: none;
     }
   }
   

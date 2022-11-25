@@ -48,8 +48,8 @@ function NavBar() {
                 Education
               </NavLink>
             </li>
-              <Link to={"register"} className="btn-text">Sign up</Link>
-              <Link to={"login"} className="btn-text">Login</Link>
+              <Link to={"register"} className="btn-text" onClick={handleClick}>Sign up</Link>
+              <Link to={"login"} className="btn-text" onClick={handleClick}>Login</Link>
           </ul>
           <div className="nav-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"}></i>

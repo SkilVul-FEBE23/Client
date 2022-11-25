@@ -1,17 +1,18 @@
 .signup {
     background-color: #7400b8;
-    padding: 2% 0;
     display: flex;
-    padding-right: 10%;
+    justify-content: center;
+    height: 100%;
+    margin-bottom: -80px;
   }
   
   .signup-form {
     background-color: #ffbd00;
     text-align: center;
-    margin: 5% auto;
+    margin:  20px auto;
     width: 500px;
     border-radius: 20px;
-    height: 600px;
+    height: 500px;
   }
   
   .signup-form h2 {
@@ -115,15 +116,15 @@
   }
   
   .img {
-    position: relative;
-    left: 67%;
+    position: absolute;
     margin-top: 200px;
   }
   
   @media screen and (max-width: 767px) {
     .signup {
-      padding: 35% 0;
-      padding-right: 19%;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
     }
   
     .img {
@@ -132,15 +133,4 @@
     }
   }
   
-  @media screen and (min-width: 767px) and (max-width: 1023px) {
-    .signup {
-      padding: 35% 0;
-      padding-right: 19%;
-    }
-  
-    .img {
-      position: relative;
-      left: 20%;
-    }
-  }
   

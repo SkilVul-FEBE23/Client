@@ -37,7 +37,7 @@ function Login() {
           <div className="password">
             <img src={lock} alt="" width="20px" height="18px" />
             <input
-              type="text"
+              type="password"
               placeholder="Password"
               className="input-password"
             />
