@@ -1,3 +1,6 @@
+*{
+  text-decoration: none;
+}
 .navbar {
     background-color: #ffffff;
     height: 80px;
@@ -66,11 +69,13 @@
   .nav-item:hover:after {
     width: 100%;
     background: #4640ff;
+    text-decoration: none;
   }
   
   .nav-item .active {
     color: #4640ff;
     border: 1px solid #4640ff;
+    text-decoration: none;
   }
   
   .nav-icon {
@@ -80,10 +85,26 @@
     background-color: #4552c5;
     color: #fff;
     text-decoration: none;
-    padding: 8px 12px;
+    padding: 10px 12px;
     border-radius: 10px;
     font-size: 1.5rem;
     margin-right: 2rem;
+}
+.btn-name{
+  background-color: #4552c5;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    margin-right: 2rem;
+    cursor: pointer;
+    align-items: center;
+}
+.btn-name:hover{
+  background-color: whitesmoke;
+  color: #4552c5;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.571);
 }
 .btn-text:hover{
     background-color: whitesmoke;
@@ -137,4 +158,17 @@
       border-radius: 0;
       line-height: 40px;
     }
+    .btn-name{
+      width: 100%;
+      border-radius: 0;
+      line-height: 40px;
+    }
+    .dropdown-menu{
+      width: 100%;
+      text-align: center;
+      
+    }
+  .dropdown-divider{
+    width: 100%;
+  }
   }

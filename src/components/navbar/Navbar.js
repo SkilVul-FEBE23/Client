@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import { NavLink,Link } from "react-router-dom";
+import { useContext } from "react";
+import { NavLink,Link, useNavigate } from "react-router-dom";
+import App, { AppContext } from "../../App";
 import "./Navbar.css"
 
 function NavBar() {
+  const Context = useContext(AppContext)
+  let navigasi = useNavigate();
   const [click, setClick] = useState(false);
-
   const handleClick = () => setClick(!click);
   return (
     <>
@@ -48,8 +51,29 @@ function NavBar() {
                 Education
               </NavLink>
             </li>
-              <Link to={"register"} className="btn-text" onClick={handleClick}>Sign up</Link>
-              <Link to={"login"} className="btn-text" onClick={handleClick}>Login</Link>
+            {
+              Context.pengguna ? (
+                <div className="dropdown">
+                {/* <button className="btn-name" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  {Context.pengguna.username}
+                </button> */}
+                <p className="btn-name" type="button" data-bs-toggle="dropdown" aria-expanded="false">{Context.pengguna.username}</p>
+                <ul className="dropdown-menu">
+                  <li><Link className="dropdown-item" to="#">Hasil Kuis</Link></li>
+                  <li><Link className="dropdown-item" to="#">Ganti password</Link></li>
+                  <li><hr className="dropdown-divider"/></li>
+                  <li><Link className="dropdown-item" to="#" onClick={
+                    ()=>{
+                      Context.setPengguna(null)
+                      navigasi('/')
+                    }
+                  }>Logout</Link></li>
+  </ul>
+</div>
+              ) : (
+                <Link to={"login"} className="btn-text" onClick={handleClick}>Login</Link>
+              )
+            }
           </ul>
           <div className="nav-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"}></i>

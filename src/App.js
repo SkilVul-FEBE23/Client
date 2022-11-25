@@ -1,3 +1,4 @@
+import { useState, createContext, useEffect} from 'react';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import Home from './pages/Home';
@@ -13,9 +14,14 @@ import Gethelp from './pages/Gethelp';
 import Detail from './pages/Detail';
 import Rout from './pages/Rout';
 
+export const AppContext = createContext(null);
 function App() {
+  const [pengguna,setPengguna]= useState();
+  // useEffect (()=>{
+  //   import ('bootstrap/dist/js/bootstrap')
+  // })
   return (
-    <div>
+    <AppContext.Provider value={{pengguna, setPengguna}}>
     <Navbar/>
     <Routes>
       <Route path='/' element={<Home/>}/>
@@ -31,7 +37,7 @@ function App() {
     </Routes>
     <Rout/>
     <Footer/>
-    </div>
+    </AppContext.Provider>
   );
 }
 

@@ -1,10 +1,39 @@
+import { useContext } from "react";
 import React from "react";
 import "./Login.css";
 import lock from "../../img/lock.png";
 import user from "../../img/user.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AppContext } from "../../App.js";
 
 function Login() {
+  const Context = useContext(AppContext);
+  let navigasi = useNavigate();
+  const loginClick = async (e) => {
+    e.preventDefault();
+    let u = e.target.username.value;
+    let p = e.target.password.value;
+    let cek_login = await fetch("https://dummyjson.com/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        username: u,
+        password: p,
+        // expiresInMins: 60, // optional
+      }),
+    })
+      .then((res) => res.json())
+      .then((hasil) => {
+        return hasil;
+      });
+
+    if (cek_login.username === undefined)
+      alert("login gagal.username atau password salah!");
+    else {
+      Context.setPengguna(cek_login);
+      navigasi("/");
+    }
+  };
   return (
     <div className="login-form">
       <div className="form-text">
@@ -22,7 +51,7 @@ function Login() {
       </div>
 
       <div className="login-input">
-        <form action="" className="form-body">
+        <form onSubmit={loginClick} className="form-body">
           <h2>Login</h2>
           <div className="username">
             <img src={user} alt="" width="20px" height="18px" />
@@ -31,6 +60,7 @@ function Login() {
               type="text"
               placeholder="Enter username"
               className="input-username"
+              name="username"
             />
           </div>
 
@@ -40,9 +70,12 @@ function Login() {
               type="password"
               placeholder="Password"
               className="input-password"
+              name="password"
             />
           </div>
-          <button className="btn-login">Sign In</button>
+          <button className="btn-login" type="submit">
+            Sign In
+          </button>
           <Link to="/register" style={{ textDecoration: "none" }}>
             <p className="create-acc">Create an account</p>
           </Link>
