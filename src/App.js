@@ -16,7 +16,7 @@ import Rout from './pages/Rout';
 
 export const AppContext = createContext(null);
 function App() {
-  const [pengguna,setPengguna]= useState();
+  const [pengguna,setPengguna]= useState(JSON.parse(localStorage.getItem("token")));
   // useEffect (()=>{
   //   import ('bootstrap/dist/js/bootstrap')
   // })

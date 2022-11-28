@@ -65,8 +65,10 @@ function NavBar() {
                   <li><Link className="dropdown-item" to="#" onClick={
                     ()=>{
                       Context.setPengguna(null)
+                      localStorage.clear()
                       navigasi('/')
                     }
+
                   }>Logout</Link></li>
   </ul>
 </div>
