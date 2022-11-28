@@ -6,7 +6,9 @@ import user from "../../img/user.png";
 import { Link, useNavigate } from "react-router-dom";
 import { AppContext } from "../../App.js";
 
+let users = null;
 function Login() {
+  ceklocalstorage();
   const Context = useContext(AppContext);
   let navigasi = useNavigate();
   const loginClick = async (e) => {
@@ -24,6 +26,7 @@ function Login() {
     })
       .then((res) => res.json())
       .then((hasil) => {
+        localStorage.setItem("token", JSON.stringify(hasil));
         return hasil;
       });
 
@@ -34,6 +37,15 @@ function Login() {
       navigasi("/");
     }
   };
+
+  function ceklocalstorage() {
+    if (users !== "") {
+      users = JSON.parse(localStorage.getItem("token"));
+    } else {
+      users = JSON.parse(sessionStorage.getItem("token"));
+    }
+  }
+
   return (
     <div className="login-form">
       <div className="form-text">
