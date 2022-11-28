@@ -5,6 +5,8 @@ export const FETCH_START = "FETCH_START";
 export const SUCCESS_GET_DATA = "SUCCESS_GET_DATA";
 export const SELECTED_PSIKOLOG = "SELECTED_PSIKOLOG";
 export const REMOVE_SELECTED_PSIKOLOG = "REMOVE_SELECTED_PSIKOLOG";
+export const START_SEARCH_PSIKOLOG = "START_SEARCH_PSIKOLOG";
+export const SUCCESS_SEARCH_PSIKOLOG = "SUCCESS_SEARCH_PSIKOLOG";
 
 function fetchStart() {
   return {
@@ -32,6 +34,19 @@ export const removeSelectedPsikolog = () => {
   };
 };
 
+export const startSearchDataPsikolog = () => {
+  return {
+    type: START_SEARCH_PSIKOLOG,
+  };
+};
+
+export const searchDataPsikolog = (data) => {
+  return {
+    type: SUCCESS_SEARCH_PSIKOLOG,
+    payload: data,
+  };
+};
+
 export const getPsikologs = () => {
   return async (dispatch) => {
     //ubang isloading menjadi true
@@ -42,5 +57,18 @@ export const getPsikologs = () => {
       "https://6347c70edb76843976b1f3f8.mockapi.io/psikolog"
     );
     dispatch(getDataPsikologs(result.data));
+  };
+};
+
+export const searchPsikologs = (searchTerm) => {
+  return async (dispatch) => {
+    //ubang isloading menjadi true
+    dispatch(startSearchDataPsikolog());
+
+    // get data psikolog dengan axios
+    const result = await axios.get(
+      `https://6347c70edb76843976b1f3f8.mockapi.io/psikolog?search=${searchTerm}`
+    );
+    dispatch(searchDataPsikolog(result.data));
   };
 };

@@ -3,6 +3,8 @@ import {
   SELECTED_PSIKOLOG,
   SUCCESS_GET_DATA,
   REMOVE_SELECTED_PSIKOLOG,
+  START_SEARCH_PSIKOLOG,
+  SUCCESS_SEARCH_PSIKOLOG,
 } from "../action/psikologAction";
 
 const initialState = {
@@ -33,6 +35,19 @@ export const psikologsReducer = (state = initialState, action) => {
       };
 
     case SUCCESS_GET_DATA:
+      return {
+        ...state,
+        psikologs: action.payload,
+        isLoading: false,
+      };
+
+    case START_SEARCH_PSIKOLOG:
+      return {
+        ...state,
+        isLoading: true,
+      };
+
+    case SUCCESS_SEARCH_PSIKOLOG:
       return {
         ...state,
         psikologs: action.payload,

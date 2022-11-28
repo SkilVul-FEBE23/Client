@@ -7,6 +7,7 @@ import {
   selectedPsikolog,
 } from "../redux/action/psikologAction";
 import "./Detail.css";
+import Loading1 from "../components/Loading/Loading1";
 
 function Detail() {
   const psikologinfo = useSelector((state) => state.psikologinfo);
@@ -33,33 +34,50 @@ function Detail() {
 
   return (
     <div>
-      <h4 className="detail-text">
-        Get to know more about our psikolog here and if you feel confident with
-        us you can contact us there !{" "}
-      </h4>
-
-      <div className="detail-content">
-        <div className="img-rate">
-          <img src={psikologinfo.img} width="400px" alt="" id="img" />
-
-          <span className="fas fa-star" id="ratestar">
-            {psikologinfo.rate}
-          </span>
+      {Object.keys(psikologinfo).length === 0 ? (
+        <div>
+          <Loading1 />
         </div>
+      ) : (
+        <div className="detail-content">
+          <div className="img-rate">
+            <img src={psikologinfo.img} width="400px" alt="" id="img" />
 
-        <div className="text-button">
-          <h1 id="title">{psikologinfo.name}</h1>
-          <p id="description">{psikologinfo.overview}</p>
-          <a
-            href="https://wa.me/089637074190"
-            id="btn-contact"
-            target="_blank "
-            rel="noreferr"
-          >
-            Contact
-          </a>
+            <span className="fas fa-star" id="ratestar">
+              {psikologinfo.rate}
+            </span>
+          </div>
+
+          <div className="text-button">
+            <h1 id="title">{psikologinfo.name}</h1>
+            <p id="description">{psikologinfo.overview}</p>
+
+            <div className="list">
+              <ul>
+                <h4>Pengalaman : </h4>
+                <li className="pengalaman-list">
+                  Bekerja di rs selama 5 tahun
+                </li>
+              </ul>
+
+              <ul>
+                <h4>Pendidikan :</h4>
+                <li className="pendidikan-list">S-2 Magister Psikolog UGM</li>
+                <li className="pendidikan-list">S-1 Psikolog UGM</li>
+              </ul>
+            </div>
+
+            <a
+              href="https://wa.me/089637074190"
+              id="btn-contact"
+              target="_blank "
+              rel="noreferr"
+            >
+              Contact Now
+            </a>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
