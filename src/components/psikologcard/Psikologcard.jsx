@@ -9,7 +9,6 @@ import { Rate } from "antd";
 function Psikologscard() {
   const dispatch = useDispatch();
   const { psikologs, isLoading } = useSelector((state) => state.psikolog);
-
   useEffect(() => {
     dispatch(getPsikologs());
   }, []);
