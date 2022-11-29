@@ -1,0 +1,49 @@
+.wadah-gambar{
+    display: flex;
+    justify-content: center;
+}
+.gambar{
+    align-items: center;
+    width: 50%;
+}
+.text-k{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+.text-kecil{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.tombol{
+    display: flex;
+    justify-content: center;
+}
+.btn-back{
+    background-color: #4552c5;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    margin-right: 2rem;
+}
+.btn-back:hover{
+    background-color: whitesmoke;
+    color: #4552c5;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.571);
+  }
+  @media screen and (max-width: 960px){
+    .text-k{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+    .gambar{
+        align-items: center;
+        width: 70%;
+    }
+  }
