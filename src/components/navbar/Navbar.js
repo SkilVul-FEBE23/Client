@@ -3,10 +3,9 @@ import { useContext } from "react";
 import { NavLink,Link, useNavigate } from "react-router-dom";
 import  { AppContext } from "../../App";
 import "./Navbar.css"
-import {Navigate} from "react-router-dom"
 
 function NavBar() {
-  const Context = useContext(AppContext)
+  const Context = useContext(AppContext);
   let navigasi = useNavigate();
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
@@ -14,18 +13,24 @@ function NavBar() {
     <>
       <nav className="navbar">
         <div className="nav-container">
-          <NavLink exact to="/" className="nav-logo"  style={{ textDecoration: "none" }}>
+          <NavLink
+            exact
+            to="/"
+            className="nav-logo"
+            style={{ textDecoration: "none" }}
+          >
             BeraniMelawan.Co
           </NavLink>
 
-          <ul className={click ? "nav-menu active" : "nav-menu"} >
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
               <NavLink
                 exact
                 to="/"
                 activeClassName="active"
                 className="nav-links"
-                onClick={handleClick}  style={{ textDecoration: "none" }}
+                onClick={handleClick}
+                style={{ textDecoration: "none" }}
               >
                 Home
               </NavLink>
@@ -48,18 +53,26 @@ function NavBar() {
                 to="/education"
                 activeClassName="active"
                 className="nav-links"
-                onClick={handleClick}  style={{ textDecoration: "none" }}
+                onClick={handleClick}
+                style={{ textDecoration: "none" }}
               >
                 Education
               </NavLink>
             </li>
-            {
-              Context.pengguna ? (
-                <div className="dropdown">
+            {Context.pengguna ? (
+              <div className="dropdown">
                 {/* <button className="btn-name" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                   {Context.pengguna.username}
                 </button> */}
-                <p className="btn-name" type="button" data-bs-toggle="dropdown" aria-expanded="false"  style={{ textDecoration: "none" }}>{Context.pengguna.username}</p>
+                <p
+                  className="btn-name"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  style={{ textDecoration: "none" }}
+                >
+                  {Context.pengguna.username}
+                </p>
                 <ul className="dropdown-menu">
                   <li><Link className="dropdown-item" to="#">Hasil Kuis</Link></li>
                   <li><hr className="dropdown-divider"/></li>

@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./Psikologcard.css";
 import { Link } from "react-router-dom";
 import { getPsikologs } from "../../redux/action/psikologAction";
+import Loading from "../Loading/Loading";
+import { Rate } from "antd";
 
 function Psikologscard() {
   const dispatch = useDispatch();
   const { psikologs, isLoading } = useSelector((state) => state.psikolog);
-  const { searchTerm, setSearchTerm } = useState("");
 
   useEffect(() => {
     dispatch(getPsikologs());
@@ -15,20 +16,11 @@ function Psikologscard() {
 
   return (
     <div>
-      <div>
-        <h4 className="text-help">
-          Find your best psikolog here to ask your problem
-        </h4>
-        <input
-          type="text"
-          placeholder="Cari Psikolog..."
-          onChange={(e) => searchTerm(e.target.value)}
-          className="input-bar"
-        />
-      </div>
       <div className="cards-psikolog">
         {isLoading ? (
-          <span>Loading...</span>
+          <div>
+            <Loading />
+          </div>
         ) : (
           psikologs.map((item) => (
             <div className="" key={item.id}>
@@ -38,13 +30,19 @@ function Psikologscard() {
                   <div className="cardpsikolog-body">
                     <h5 className="card-title">{item.name}</h5>
                     <div className="rate">
-                      <p className="card-text fas fa-star ">{item.rate}</p>
+                      <Rate
+                        defaultValue={item.rate}
+                        count={10}
+                        allowHalf
+                        style={{
+                          color: "orange",
+                          marginBottom: "10px",
+                        }}
+                        disabled
+                      />
                     </div>
-                    <Link
-                      className="btn btn-primary"
-                      to={`/psikolog/${item.id}`}
-                    >
-                      Detail
+                    <Link className="btn" to={`/gethelp/psikolog/${item.id}`}>
+                      Lihat Detail
                     </Link>
                   </div>
                 </div>
