@@ -27,8 +27,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Gethelp" element={<Gethelp />} />
-        <Route path="/psikolog/:psikologId" element={<Detail />} />
+        <Route path="/gethelp" element={<Gethelp />} />
+        <Route path="/gethelp/psikolog/:psikologId" element={<Detail />} />
+
         <Route path="/education" element={<Education />} />
         <Route path="/education/bullied" element={<Bullied />} />
         <Route path="/education/students" element={<Students />} />

@@ -8,12 +8,12 @@ import {
 } from "../redux/action/psikologAction";
 import "./Detail.css";
 import Loading1 from "../components/Loading/Loading1";
+import { Rate } from "antd";
 
 function Detail() {
   const psikologinfo = useSelector((state) => state.psikologinfo);
   const { psikologId } = useParams();
   const dispatch = useDispatch();
-  console.log(psikologinfo);
 
   const fetchPsikologDetail = async () => {
     const response = await axios
@@ -43,9 +43,16 @@ function Detail() {
           <div className="img-rate">
             <img src={psikologinfo.img} width="400px" alt="" id="img" />
 
-            <span className="fas fa-star" id="ratestar">
+            {/* <span className="fas fa-star" id="ratestar">
               {psikologinfo.rate}
-            </span>
+            </span> */}
+            <Rate
+              defaultValue={psikologinfo.rate}
+              count={10}
+              allowHalf
+              style={{ color: "orange" }}
+              disabled
+            />
           </div>
 
           <div className="text-button">

@@ -4,6 +4,7 @@ import "./Psikologcard.css";
 import { Link } from "react-router-dom";
 import { getPsikologs } from "../../redux/action/psikologAction";
 import Loading from "../Loading/Loading";
+import { Rate } from "antd";
 
 function Psikologscard() {
   const dispatch = useDispatch();
@@ -29,9 +30,18 @@ function Psikologscard() {
                   <div className="cardpsikolog-body">
                     <h5 className="card-title">{item.name}</h5>
                     <div className="rate">
-                      <p className="card-text fas fa-star ">{item.rate}</p>
+                      <Rate
+                        defaultValue={item.rate}
+                        count={10}
+                        allowHalf
+                        style={{
+                          color: "orange",
+                          marginBottom: "10px",
+                        }}
+                        disabled
+                      />
                     </div>
-                    <Link className="btn" to={`/psikolog/${item.id}`}>
+                    <Link className="btn" to={`/gethelp/psikolog/${item.id}`}>
                       Lihat Detail
                     </Link>
                   </div>
