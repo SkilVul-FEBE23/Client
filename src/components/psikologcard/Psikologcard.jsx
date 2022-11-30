@@ -40,7 +40,7 @@ function Psikologscard() {
                         disabled
                       />
                     </div>
-                    <Link className="btn" to={`/gethelp/psikolog/${item.id}`}>
+                    <Link className="btn" to={`/Gethelp/psikolog/${item.id}`}>
                       Lihat Detail
                     </Link>
                   </div>
