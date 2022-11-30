@@ -1,0 +1,72 @@
+.register-baru{
+    background-color: #7400b8;
+    justify-content: center;
+    margin-bottom: -80px;
+    height: 100vh;
+    padding-top: 50px;
+  }
+
+.form-register {
+    background-color: #ffbd00;
+    text-align: center;
+    margin:  20px auto;
+    width: 500px;
+    border-radius: 20px;
+    height: 500px;
+}
+
+.form-register h2 {
+    padding: 30px;
+    margin-bottom: -26px;
+  }
+
+.input {
+    width: 300px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    width: 300px;
+    margin-left: 5px;
+    padding: 5px;
+    border: 1px solid rgb(234, 228, 228);
+    background-color: rgb(234, 228, 228);
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.form-masuk {
+    float: left;
+    width: 200px;
+    margin-left: 97px;
+}
+
+.form-masuk button {
+    padding: 10px;
+    width: 100px;
+    margin: 20px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #7400b8;
+    background-color: #7400b8;
+    color: white;
+    margin-left: 98px;
+}
+
+.form-masuk button:hover {
+    cursor: pointer;
+    background-color: #621191;
+}
+@media screen and (max-width: 960px){
+    .form-register {
+        width: 400px;
+    }
+    .register-baru{
+        padding-top: 20px;
+    }
+    .form-masuk {
+        float: left;
+        width: 200px;
+        margin-left: 50px;
+    }
+}

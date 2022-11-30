@@ -74,9 +74,9 @@ function NavBar() {
                   {Context.pengguna.username}
                 </p>
                 <ul className="dropdown-menu">
-                  <li><Link className="dropdown-item" to="#">Hasil Kuis</Link></li>
+                  <li><Link className="dropdown-item" to="/education/students/teacherQuiz">Kerjakan Kuis</Link></li>
                   <li><hr className="dropdown-divider"/></li>
-                  <li><Link className="dropdown-item" to="#" onClick={
+                  <li><Link className="dropdown-item" to="/" onClick={
                     ()=>{
                       Context.setPengguna(null)
                       localStorage.clear()

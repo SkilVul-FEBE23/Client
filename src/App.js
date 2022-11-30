@@ -14,6 +14,7 @@ import Gethelp from "./pages/Gethelp";
 import Detail from "./pages/Detail";
 import Rout from "./pages/Rout";
 import Aksess from "./pages/Aksess";
+import Register from "./components/register/Register";
 
 export const AppContext = createContext(null);
 function App() {
@@ -36,7 +37,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Gethelp" element={<Gethelp />} />
         <Route path="/Aksess" element={<Aksess />} />
-        <Route path="Gethelp/psikolog/:psikologId" element={<Detail />} />
+        <Route path="/psikolog/:psikologId" element={<Detail />} />
         <Route path="/education" element={<Education />} />
         <Route path="/education/bullied" element={<Bullied />} />
         <Route path="/education/students" element={<Students />} />
@@ -53,6 +54,7 @@ function App() {
           path="/education/students/teacherQuiz"
           element={<TeacherQuiz />}
         />
+        <Route path="/daftar" element={<Register />} />
       </Routes>
       <Rout />
       <Footer />
