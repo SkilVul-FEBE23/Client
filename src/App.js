@@ -13,6 +13,7 @@ import TeacherQuiz from './components/quiz/teacherQuiz';
 import Gethelp from './pages/Gethelp';
 import Detail from './pages/Detail';
 import Rout from './pages/Rout';
+import Register from './components/register/Register';
 
 export const AppContext = createContext(null);
 function App() {
@@ -34,6 +35,7 @@ function App() {
       <Route path='/education/students/bulliedQuiz' element={<BulliedQuiz/>}/>
       <Route path='/education/students/studentsQuiz' element={<StudentsQuiz/>}/>
       <Route path='/education/students/teacherQuiz' element={<TeacherQuiz/>}/>
+      <Route path='/daftar' element={<Register/>}/>
     </Routes>
     <Rout/>
     <Footer/>
