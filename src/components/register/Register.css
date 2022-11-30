@@ -1,8 +1,9 @@
-.register {
+.register-baru{
     background-color: #7400b8;
     justify-content: center;
-    height: 100%;
     margin-bottom: -80px;
+    height: 100vh;
+    padding-top: 50px;
   }
 
 .form-register {
@@ -34,13 +35,13 @@
     font-size: 20px;
 }
 
-.form-input {
+.form-masuk {
     float: left;
     width: 200px;
     margin-left: 97px;
 }
 
-.form-input button {
+.form-masuk button {
     padding: 10px;
     width: 100px;
     margin: 20px;
@@ -52,7 +53,20 @@
     margin-left: 98px;
 }
 
-.form-input button:hover {
+.form-masuk button:hover {
     cursor: pointer;
     background-color: #621191;
+}
+@media screen and (max-width: 960px){
+    .form-register {
+        width: 400px;
+    }
+    .register-baru{
+        padding-top: 20px;
+    }
+    .form-masuk {
+        float: left;
+        width: 200px;
+        margin-left: 50px;
+    }
 }

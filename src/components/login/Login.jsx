@@ -88,7 +88,7 @@ function Login() {
           <button className="btn-login" type="submit">
             Sign In
           </button>
-          <Link to="/register" style={{ textDecoration: "none" }}>
+          <Link to="/daftar" style={{ textDecoration: "none" }}>
             <p className="create-acc">Create an account</p>
           </Link>
         </form>

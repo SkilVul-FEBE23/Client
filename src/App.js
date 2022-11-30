@@ -14,6 +14,7 @@ import Gethelp from './pages/Gethelp';
 import Detail from './pages/Detail';
 import Rout from './pages/Rout';
 import Aksess from './pages/Aksess';
+import Register from './components/register/Register'
 
 export const AppContext = createContext(null);
 function App() {
