@@ -11,9 +11,9 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://6384a0324ce192ac605e0d4a.mockapi.io/students", {
-        username,
+      .post("http://localhost:5555/users/register", {
         email,
+        username,
         password,
       })
       .then(() => {

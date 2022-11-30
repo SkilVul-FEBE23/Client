@@ -17,7 +17,7 @@ function Detail() {
 
   const fetchPsikologDetail = async () => {
     const response = await axios
-      .get(`https://6347c70edb76843976b1f3f8.mockapi.io/psikolog/${psikologId}`)
+      .get(`http://localhost:5555/partners/${psikologId}`)
       .catch((err) => {
         console.log("Err", err);
       });
@@ -56,7 +56,7 @@ function Detail() {
           </div>
 
           <div className="text-button">
-            <h1 id="title">{psikologinfo.name}</h1>
+            <h1 id="title">{psikologinfo.nama}</h1>
             <p id="description">{psikologinfo.overview}</p>
 
             <div className="list">
@@ -69,8 +69,8 @@ function Detail() {
 
               <ul>
                 <h4>Pendidikan :</h4>
-                <li className="pendidikan-list">S-2 Magister Psikolog UGM</li>
-                <li className="pendidikan-list">S-1 Psikolog UGM</li>
+                <li className="pendidikan-list">{psikologinfo.pendidikan1}</li>
+                <li className="pendidikan-list">{psikologinfo.pendidikan2}</li>
               </ul>
             </div>
 
