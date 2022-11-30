@@ -54,7 +54,7 @@ export const getPsikologs = () => {
 
     // get data psikolog dengan axios
     const result = await axios.get(
-      "https://6347c70edb76843976b1f3f8.mockapi.io/psikolog"
+      "http://localhost:5555/partners"
     );
     dispatch(getDataPsikologs(result.data));
   };
@@ -67,7 +67,7 @@ export const searchPsikologs = (searchTerm) => {
 
     // get data psikolog dengan axios
     const result = await axios.get(
-      `https://6347c70edb76843976b1f3f8.mockapi.io/psikolog?search=${searchTerm}`
+      `http://localhost:5555/partners?search=${searchTerm}`
     );
     dispatch(searchDataPsikolog(result.data));
   };

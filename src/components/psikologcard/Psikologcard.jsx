@@ -27,7 +27,7 @@ function Psikologscard() {
                 <div className="card-psikolog">
                   <img src={item.img} className="card-img-top" alt="..." />
                   <div className="cardpsikolog-body">
-                    <h5 className="card-title">{item.name}</h5>
+                    <h5 className="card-title">{item.nama}</h5>
                     <div className="rate">
                       <Rate
                         defaultValue={item.rate}
@@ -40,7 +40,7 @@ function Psikologscard() {
                         disabled
                       />
                     </div>
-                    <Link className="btn" to={`/Gethelp/psikolog/${item.id}`}>
+                    <Link className="btn" to={`/Gethelp/psikolog/${item._id}`}>
                       Lihat Detail
                     </Link>
                   </div>

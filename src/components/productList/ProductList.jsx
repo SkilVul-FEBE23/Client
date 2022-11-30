@@ -8,7 +8,7 @@ const ProductList = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     axios
-      .get("https://63733e60348e94729906c3f7.mockapi.io/posts")
+      .get("http://localhost:5555/blog")
       .then((res) => {
         console.log(res);
         setPosts(res.data);
@@ -31,7 +31,7 @@ const ProductList = () => {
           <Product key={item.id} img={item.img} link={item.link} />
         ))} */}
         {posts.map((item) => (
-          <Product key={item.id} img={item.img} link={item.link} />
+          <Product key={item._id} img={item.img} link={item.link} />
         ))}
       </div>
     </div>
