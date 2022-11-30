@@ -19,7 +19,7 @@ const Event = () => {
             alami saat ini.
           </p>
           <Link
-            to={"Gethelp"}
+            to={"/Aksess"}
             className="ctn"
             style={{ textDecoration: "none" }}
           >
