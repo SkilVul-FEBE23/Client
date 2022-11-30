@@ -51,12 +51,12 @@ function Login() {
       <div className="form-text">
         <div className="text">
           <h2>Hello,Selamat Datang</h2>
-          <p>
+          <span>
             Psikiater Online BeraniMelawan.CO bukanlah praktisi kesehatan
             sembarangan. Kamu bisa terhubung langsung dengan cepat dan mudah,
             serta tidak perlu meragukan kualitas konsultasi dan penanganan yang
             ditawarkan.
-          </p>
+          </span>
 
           <h4>Temukan Psikolog terbaik Anda untuk solusi yang tepat !</h4>
         </div>
