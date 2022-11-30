@@ -46,6 +46,7 @@ function App() {
       <Route path='/education/students/bulliedQuiz' element={<BulliedQuiz/>}/>
       <Route path='/education/students/studentsQuiz' element={<StudentsQuiz/>}/>
       <Route path='/education/students/teacherQuiz' element={<TeacherQuiz/>}/>
+      <Route path='/daftar' element={<Register/>}/>
     </Routes>
     <Rout/>
     <Footer/>
