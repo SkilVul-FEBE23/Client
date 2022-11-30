@@ -15,9 +15,11 @@ function Login() {
     e.preventDefault();
     let u = e.target.username.value;
     let p = e.target.password.value;
-    let cek_login = await fetch("https://dummyjson.com/auth/login", {
+    let cek_login = await fetch("http://localhost:5555/users/login", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { 'Content-Type' : 'application/json',
+      'Accept' : 'application/json',
+      'Authorization' : 'yoursecret' },
       body: JSON.stringify({
         username: u,
         password: p,
