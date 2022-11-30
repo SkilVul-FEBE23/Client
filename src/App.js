@@ -37,7 +37,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Gethelp" element={<Gethelp />} />
         <Route path="/Aksess" element={<Aksess />} />
-        <Route path="/psikolog/:psikologId" element={<Detail />} />
+        <Route path="Gethelp/psikolog/:psikologId" element={<Detail />} />
         <Route path="/education" element={<Education />} />
         <Route path="/education/bullied" element={<Bullied />} />
         <Route path="/education/students" element={<Students />} />
