@@ -20,6 +20,12 @@ function getDataPsikologs(data) {
     payload: data,
   };
 }
+function getDataUsers(data) {
+  return {
+    type: SUCCESS_GET_DATA,
+    payload: data,
+  };
+}
 
 export const selectedPsikolog = (psikolog) => {
   return {
@@ -47,6 +53,19 @@ export const searchDataPsikolog = (data) => {
   };
 };
 
+
+
+export const getUsers = () => {
+  return async (dispatch) => {
+    dispatch(fetchStart());
+    const result = await axios.get(
+      "http://localhost:5555/users"
+    );
+    dispatch(getDataUsers(result.data));
+  };
+};
+
+
 export const getPsikologs = () => {
   return async (dispatch) => {
     //ubang isloading menjadi true
@@ -56,9 +75,10 @@ export const getPsikologs = () => {
     const result = await axios.get(
       "http://localhost:5555/partners"
     );
-    dispatch(getDataPsikologs(result.data));
+    dispatch(getDataUsers(result.data));
   };
 };
+
 
 export const searchPsikologs = (searchTerm) => {
   return async (dispatch) => {
