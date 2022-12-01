@@ -20,6 +20,12 @@ function getDataPsikologs(data) {
     payload: data,
   };
 }
+function getDataUsers(data) {
+  return {
+    type: SUCCESS_GET_DATA,
+    payload: data,
+  };
+}
 
 export const selectedPsikolog = (psikolog) => {
   return {
@@ -47,6 +53,19 @@ export const searchDataPsikolog = (data) => {
   };
 };
 
+
+
+export const getUsers = () => {
+  return async (dispatch) => {
+    dispatch(fetchStart());
+    const result = await axios.get(
+      "http://localhost:5555/users"
+    );
+    dispatch(getDataUsers(result.data));
+  };
+};
+
+
 export const getPsikologs = () => {
   return async (dispatch) => {
     //ubang isloading menjadi true
@@ -54,11 +73,12 @@ export const getPsikologs = () => {
 
     // get data psikolog dengan axios
     const result = await axios.get(
-      "https://6347c70edb76843976b1f3f8.mockapi.io/psikolog"
+      "http://localhost:5555/partners"
     );
-    dispatch(getDataPsikologs(result.data));
+    dispatch(getDataUsers(result.data));
   };
 };
+
 
 export const searchPsikologs = (searchTerm) => {
   return async (dispatch) => {
@@ -67,7 +87,7 @@ export const searchPsikologs = (searchTerm) => {
 
     // get data psikolog dengan axios
     const result = await axios.get(
-      `https://6347c70edb76843976b1f3f8.mockapi.io/psikolog?search=${searchTerm}`
+      `http://localhost:5555/partners?search=${searchTerm}`
     );
     dispatch(searchDataPsikolog(result.data));
   };

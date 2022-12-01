@@ -10,7 +10,7 @@ const Footer = () => {
 
         <p className="footer-links">
           <Link to={"/"}>Home|</Link>
-          <Link to={"/Gethelp"}>GetHelp|</Link>
+          <Link to={"/Aksess"}>GetHelp|</Link>
           <Link to={"/education"}>Education|</Link>
         </p>
 
