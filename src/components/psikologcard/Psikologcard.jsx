@@ -22,7 +22,7 @@ function Psikologscard() {
           </div>
         ) : (
           psikologs.map((item) => (
-            <div className="" key={item.id}>
+            <div className="" key={item._id}>
               <div className="">
                 <div className="card-psikolog">
                   <img src={item.img} className="card-img-top" alt="..." />
