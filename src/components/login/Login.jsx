@@ -10,68 +10,71 @@ import { AppContext } from "../../App.js";
 let users = null;
 function Login() {
   ceklocalstorage();
-  const baseURL = "http://localhost:5555/users/login"
+  const baseURL = "https://server-production-5fed.up.railway.app/users/login"
   const Context = useContext(AppContext);
   let navigasi = useNavigate();
 
-  const loginClick = (e) => {
-    e.preventDefault();
-    let em = e.target.email.value;
-    let p = e.target.password.value;
+  // const loginClick = (e) => {
+  //   e.preventDefault();
+  //   let em = e.target.email.value;
+  //   let p = e.target.password.value;
 
-    const data = {email: em, password: p}
+  //   const data = {email: em, password: p}
   
-    axios
-      .post(baseURL, data)
-      .then((resp) => {
-        localStorage.setItem("token", JSON.stringify(resp));
+  //   axios
+  //     .post(baseURL, data)
+  //     .then((resp) => {
+  //       localStorage.setItem("token", JSON.stringify(resp));
+  //       alert("success login");
+  //       window.location.reload()
+  //       navigasi("/");
+
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+
+  //     if (em === undefined)
+  //       alert("login gagal.username atau password salah!");
+  //     else {
+  //       Context.setPengguna();
+  //       navigasi("/");
+  //     }
+  // }
+
+
+  const loginClick = async (e) => {
+    e.preventDefault();
+    let u = e.target.email.value;
+    let p = e.target.password.value;
+    let cek_login = await fetch(baseURL, {
+      method: "POST",
+      headers: { 'Content-Type' : 'application/json',
+      'Accept' : 'application/json',
+      'Authorization' : 'yoursecret' },
+      body: JSON.stringify({
+        username: u,
+        password: p,
+        // expiresInMins: 60, // optional
+      }),
+    })
+      .then((res) => res.json())
+      .then((hasil) => {
+        localStorage.setItem("token", JSON.stringify(hasil));
+        console.log(hasil)
         alert("success login");
         window.location.reload()
         navigasi("/");
 
-      })
-      .catch((err) => {
-        console.log(err);
       });
 
-      if (em === undefined)
-        alert("login gagal.username atau password salah!");
-      else {
-        Context.setPengguna();
-        navigasi("/");
-      }
-  }
-
-
-  // const loginClick = async (e) => {
-  //   e.preventDefault();
-  //   let u = e.target.email.value;
-  //   let p = e.target.password.value;
-  //   let cek_login = await fetch("http://localhost:5555/users/login", {
-  //     method: "POST",
-  //     headers: { 'Content-Type' : 'application/json',
-  //     'Accept' : 'application/json',
-  //     'Authorization' : 'yoursecret' },
-  //     body: JSON.stringify({
-  //       username: u,
-  //       password: p,
-  //       // expiresInMins: 60, // optional
-  //     }),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((hasil) => {
-  //       localStorage.setItem("token", JSON.stringify(hasil));
-  //       console.log(hasil)
-  //       return hasil;
-  //     });
-
-  //   if (cek_login.username === undefined)
-  //     alert("login gagal.username atau password salah!");
-  //   else {
-  //     Context.setPengguna(cek_login);
-  //     navigasi("/");
-  //   }
-  // };
+    if (cek_login.username === undefined)
+      alert("login gagal.username atau password salah!");
+    else {
+      Context.setPengguna(cek_login);
+      navigasi("/");
+    }
+  };
 
   function ceklocalstorage() {
     if (users !== "") {
@@ -104,7 +107,7 @@ function Login() {
             <img src={user} alt="" width="20px" height="18px" />
 
             <input
-              type="email"
+              type="text"
               placeholder="Enter username"
               className="input-username"
               name="email"

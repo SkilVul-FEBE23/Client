@@ -10,18 +10,18 @@ import "./Navbar.css"
 
 function NavBar() {
 
-  const [posts, setPosts] = useState([]);
-  useEffect(() => {
-    axios
-      .get("http://localhost:5555/users")
-      .then((res) => {
-        console.log(res);
-        setPosts(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  // const [posts, setPosts] = useState([]);
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:5555/users")
+  //     .then((res) => {
+  //       console.log(res);
+  //       setPosts(res.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
 
   const Context = useContext(AppContext);
   let navigasi = useNavigate();
@@ -80,13 +80,30 @@ function NavBar() {
               </NavLink>
             </li>
             {/* {posts.map((item) => (
-
-          ))} */}
+              <div className="dropdown">
+              <p className="btn-name" type="button" data-bs-toggle="dropdown" aria-expanded="false" style={{ textDecoration: "none" }}>
+                key={item.username}
+              </p>
+              
+              <ul className="dropdown-menu">
+                  <li><Link className="dropdown-item" to="/education/students/teacherQuiz">Kerjakan Kuis</Link></li>
+                  <li><hr className="dropdown-divider"/></li>
+                  <li><Link className="dropdown-item" to="/" onClick={
+                    ()=>{
+                      Context.setPengguna(null)
+                      localStorage.clear()
+                      navigasi('/')
+                    }
+                  }>Logout</Link></li>
+              </ul>
+              </div>
+              
+              ,(
+                <Link to={"login"} className="btn-text" onClick={handleClick}  style={{ textDecoration: "none" }}>Login</Link>
+              )
+            ))} */}
             {Context.pengguna ? (
               <div className="dropdown">
-                {/* <button className="btn-name" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  {Context.pengguna.username}
-                </button> */}
                 <p
                   className="btn-name"
                   type="button"
@@ -94,6 +111,7 @@ function NavBar() {
                   aria-expanded="false"
                   style={{ textDecoration: "none" }}
                 >
+                  neymar10
                   {Context.pengguna.username}
                 </p>
                 <ul className="dropdown-menu">

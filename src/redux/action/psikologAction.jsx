@@ -59,7 +59,7 @@ export const getUsers = () => {
   return async (dispatch) => {
     dispatch(fetchStart());
     const result = await axios.get(
-      "http://localhost:5555/users"
+      "https://server-production-5fed.up.railway.app/users"
     );
     dispatch(getDataUsers(result.data));
   };
@@ -73,7 +73,7 @@ export const getPsikologs = () => {
 
     // get data psikolog dengan axios
     const result = await axios.get(
-      "http://localhost:5555/partners"
+      "https://server-production-5fed.up.railway.app/partners"
     );
     dispatch(getDataUsers(result.data));
   };
@@ -87,7 +87,7 @@ export const searchPsikologs = (searchTerm) => {
 
     // get data psikolog dengan axios
     const result = await axios.get(
-      `http://localhost:5555/partners?search=${searchTerm}`
+      `https://server-production-5fed.up.railway.app/partners?search=${searchTerm}`
     );
     dispatch(searchDataPsikolog(result.data));
   };

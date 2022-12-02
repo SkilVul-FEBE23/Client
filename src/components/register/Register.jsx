@@ -11,7 +11,7 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5555/users/register", {
+      .post("https://server-production-5fed.up.railway.app/users/register", {
         email,
         username,
         password,
