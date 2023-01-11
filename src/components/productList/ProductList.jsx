@@ -8,7 +8,7 @@ const ProductList = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:5555/blog")
+      .get("https://febe23-server-production.up.railway.app/blog")
       .then((res) => {
         setPosts(res.data);
       })

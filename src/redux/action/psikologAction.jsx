@@ -67,7 +67,7 @@ export const getUsers = () => {
   return async (dispatch) => {
     dispatch(fetchStart());
     const result = await axios.get(
-      "http://localhost:5555/users"
+      "https://febe23-server-production.up.railway.app/users"
     );
     dispatch(getDataUsers(result.data));
   };
@@ -81,7 +81,7 @@ export const getPsikologs = () => {
 
     // get data psikolog dengan axios
     const result = await axios.get(
-      "http://localhost:5555/partners"
+      "https://febe23-server-production.up.railway.app/partners"
     );
     dispatch(getDataUsers(result.data));
   };
@@ -95,7 +95,7 @@ export const searchPsikologs = (searchTerm) => {
 
     // get data psikolog dengan axios
     const result = await axios.get(
-      `http://localhost:5555/partners/search/${searchTerm}`
+      `https://febe23-server-production.up.railway.app/partners/search/${searchTerm}`
     );
     dispatch(searchDataPsikolog(result.data));
   };
@@ -108,7 +108,7 @@ export const filterPsikologs = (filterTerm) => {
 
     // get data psikolog dengan axios
     const result = await axios.get(
-      `http://localhost:5555/partners/lokasi/${filterTerm}`
+      `https://febe23-server-production.up.railway.app/partners/lokasi/${filterTerm}`
     );
     dispatch(FilterDataPsikolog(result.data));
   };

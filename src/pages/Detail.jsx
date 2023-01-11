@@ -17,7 +17,7 @@ function Detail() {
 
   const fetchPsikologDetail = async () => {
     const response = await axios
-      .get(`http://localhost:5555/partners/${psikologId}`)
+      .get(`https://febe23-server-production.up.railway.app/partners/${psikologId}`)
       .catch((err) => {
         console.log("Err", err);
       });
