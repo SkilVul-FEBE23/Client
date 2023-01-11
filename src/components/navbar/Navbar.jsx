@@ -2,10 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useContext } from "react";
 import { NavLink,Link, useNavigate } from "react-router-dom";
 import  { AppContext } from "../../App";
-import axios from "axios";
 import "./Navbar.css"
-
-
 
 
 function NavBar() {
@@ -27,7 +24,6 @@ function NavBar() {
   let navigasi = useNavigate();
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
-  
 
   return (
     <>
@@ -79,29 +75,6 @@ function NavBar() {
                 Education
               </NavLink>
             </li>
-            {/* {posts.map((item) => (
-              <div className="dropdown">
-              <p className="btn-name" type="button" data-bs-toggle="dropdown" aria-expanded="false" style={{ textDecoration: "none" }}>
-                key={item.username}
-              </p>
-              
-              <ul className="dropdown-menu">
-                  <li><Link className="dropdown-item" to="/education/students/teacherQuiz">Kerjakan Kuis</Link></li>
-                  <li><hr className="dropdown-divider"/></li>
-                  <li><Link className="dropdown-item" to="/" onClick={
-                    ()=>{
-                      Context.setPengguna(null)
-                      localStorage.clear()
-                      navigasi('/')
-                    }
-                  }>Logout</Link></li>
-              </ul>
-              </div>
-              
-              ,(
-                <Link to={"login"} className="btn-text" onClick={handleClick}  style={{ textDecoration: "none" }}>Login</Link>
-              )
-            ))} */}
             {Context.pengguna ? (
               <div className="dropdown">
                 <p
@@ -111,8 +84,8 @@ function NavBar() {
                   aria-expanded="false"
                   style={{ textDecoration: "none" }}
                 >
-                  neymar10
                   {Context.pengguna.username}
+                  User
                 </p>
                 <ul className="dropdown-menu">
                   <li><Link className="dropdown-item" to="/education/students/teacherQuiz">Kerjakan Kuis</Link></li>

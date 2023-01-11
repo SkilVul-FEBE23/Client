@@ -43,9 +43,6 @@ function Detail() {
           <div className="img-rate">
             <img src={psikologinfo.img} width="400px" alt="" id="img" />
 
-            {/* <span className="fas fa-star" id="ratestar">
-              {psikologinfo.rate}
-            </span> */}
             <Rate
               defaultValue={psikologinfo.rate}
               count={10}

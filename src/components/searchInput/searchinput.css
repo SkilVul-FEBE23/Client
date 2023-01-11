@@ -1,14 +1,14 @@
 .search-input {
-  display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin: 65px 80px 40px;
 }
 
 .text-help {
-  width: 32%;
-  text-align: start;
-  margin-left: 45px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bolder;
+  margin-top: 80px;
 }
 
 .input-bar {
@@ -29,6 +29,10 @@
   -webkit-box-shadow: 0px 4px 3px 0px rgba(0, 0, 0, 0.52);
   -moz-box-shadow: 0px 4px 3px 0px rgba(0, 0, 0, 0.52);
   width: 22%;
+}
+
+.filter{
+  margin-left: 200px;
 }
 
 @media only screen and (max-width: 600px) {

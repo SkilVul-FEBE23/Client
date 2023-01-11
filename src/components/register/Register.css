@@ -7,18 +7,33 @@
   }
 
 .form-register {
-    background-color: #ffbd00;
-    text-align: center;
+    /* From https://css.glass */
+/* From https://css.glass */
+/* From https://css.glass */
+/* From https://css.glass */
+background: rgba( 142, 142, 142, 0.15 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 3px );
+-webkit-backdrop-filter: blur( 3px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );text-align: center;
     margin:  20px auto;
     width: 500px;
     border-radius: 20px;
     height: 500px;
 }
 
+
+
 .form-register h2 {
-    padding: 30px;
-    margin-bottom: -26px;
+    margin-top: 60px;
+    color: white;
   }
+.form-register p {
+    color: white;
+  }
+
+
 
 .input {
     width: 300px;
@@ -36,27 +51,11 @@
 }
 
 .form-masuk {
-    float: left;
     width: 200px;
     margin-left: 97px;
 }
 
-.form-masuk button {
-    padding: 10px;
-    width: 100px;
-    margin: 20px;
-    border-radius: 10px;
-    outline: none;
-    border: 1px solid #7400b8;
-    background-color: #7400b8;
-    color: white;
-    margin-left: 98px;
-}
 
-.form-masuk button:hover {
-    cursor: pointer;
-    background-color: #621191;
-}
 @media screen and (max-width: 960px){
     .form-register {
         width: 400px;
