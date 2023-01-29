@@ -5,6 +5,8 @@ import {
   REMOVE_SELECTED_PSIKOLOG,
   START_SEARCH_PSIKOLOG,
   SUCCESS_SEARCH_PSIKOLOG,
+  START_FILTER_PSIKOLOG,
+  SUCCESS_FILTER_PSIKOLOG
 } from "../action/psikologAction";
 
 const initialState = {
@@ -48,6 +50,19 @@ export const psikologsReducer = (state = initialState, action) => {
       };
 
     case SUCCESS_SEARCH_PSIKOLOG:
+      return {
+        ...state,
+        psikologs: action.payload,
+        isLoading: false,
+      };
+
+    case START_FILTER_PSIKOLOG:
+      return {
+        ...state,
+        isLoading: true,
+      };
+
+    case SUCCESS_FILTER_PSIKOLOG:
       return {
         ...state,
         psikologs: action.payload,

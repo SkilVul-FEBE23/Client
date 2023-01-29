@@ -4,22 +4,21 @@ import "./Login.css";
 import lock from "../../img/lock.png";
 import user from "../../img/user.png";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
 import { AppContext } from "../../App.js";
 
 let users = null;
 function Login() {
   ceklocalstorage();
-  const baseURL = "https://server-production-5fed.up.railway.app/users/login"
+  const baseURL = "https://febe23-server-production.up.railway.app/users/login"
   const Context = useContext(AppContext);
   let navigasi = useNavigate();
 
   // const loginClick = (e) => {
   //   e.preventDefault();
-  //   let em = e.target.email.value;
+  //   let em = e.target.username.value;
   //   let p = e.target.password.value;
 
-  //   const data = {email: em, password: p}
+  //   const data = {username: em, password: p}
   
   //   axios
   //     .post(baseURL, data)
@@ -45,35 +44,33 @@ function Login() {
 
   const loginClick = async (e) => {
     e.preventDefault();
-    let u = e.target.email.value;
-    let p = e.target.password.value;
+    let inputUsername = e.target.username.value;
+    let inputPassword = e.target.password.value;
     let cek_login = await fetch(baseURL, {
       method: "POST",
       headers: { 'Content-Type' : 'application/json',
       'Accept' : 'application/json',
       'Authorization' : 'yoursecret' },
       body: JSON.stringify({
-        username: u,
-        password: p,
+        username: inputUsername,
+        password: inputPassword,
         // expiresInMins: 60, // optional
-      }),
+      })
     })
       .then((res) => res.json())
       .then((hasil) => {
         localStorage.setItem("token", JSON.stringify(hasil));
         console.log(hasil)
-        alert("success login");
-        window.location.reload()
-        navigasi("/");
-
       });
 
-    if (cek_login.username === undefined)
-      alert("login gagal.username atau password salah!");
-    else {
-      Context.setPengguna(cek_login);
-      navigasi("/");
-    }
+      if (inputUsername !== null|| inputPassword !== null) {
+        Context.setPengguna(cek_login);
+        alert("success login");
+        navigasi("/Gethelp");
+        window.location.reload()
+      } else{
+        alert("login gagal. username atau password salah!")
+      }
   };
 
   function ceklocalstorage() {
@@ -85,7 +82,7 @@ function Login() {
   }
 
   return (
-    <div className="login-form">
+    <div className="login-form d-flex justify-content-center p-5">
       <div className="form-text">
         <div className="text">
           <h2>Hello,Selamat Datang</h2>
@@ -103,31 +100,20 @@ function Login() {
       <div className="login-input">
         <form onSubmit={loginClick} className="form-body">
           <h2>Login</h2>
-          <div className="username">
-            <img src={user} alt="" width="20px" height="18px" />
-
-            <input
-              type="text"
-              placeholder="Enter username"
-              className="input-username"
-              name="email"
-            />
+          <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Username</label>            
+          <input type="text" class="form-control form-control-lg" id="exampleInputEmail1" name="username" placeholder="Enter Username" aria-describedby="emailHelp"/>
           </div>
-
-          <div className="password">
-            <img src={lock} alt="" width="20px" height="18px" />
-            <input
-              type="password"
-              placeholder="Password"
-              className="input-password"
-              name="password"
-            />
+          <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Password</label>            
+            <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" name="password" placeholder="Password"/>
           </div>
-          <button className="btn-login" type="submit">
-            Sign In
+          <button className="btn-login mb-5" type="submit">
+            Login
           </button>
+
           <Link to="/daftar" style={{ textDecoration: "none" }}>
-            <p className="create-acc">Create an account</p>
+            <p className="mb-0">Don't have an account? <a href="registrasi.html" className="fw-bold create-acc">Sign Up</a></p>
           </Link>
         </form>
       </div>

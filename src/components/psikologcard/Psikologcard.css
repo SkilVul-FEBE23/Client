@@ -11,10 +11,10 @@
 }
 
 .cards-psikolog {
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
-  margin-left: 10%;
-  margin-top: 20px;
+  gap: 30px;
 }
 
 .cardpsikolog-body {
@@ -37,9 +37,10 @@
   padding: 5px;
 }
 
-.btn {
+.btn-psikolog {
   margin-top: 15px;
   background-color: #ffbd00;
+  border-radius: 20px;
   color: black;
 }
 

@@ -17,7 +17,7 @@ function Detail() {
 
   const fetchPsikologDetail = async () => {
     const response = await axios
-      .get(`http://localhost:5555/partners/${psikologId}`)
+      .get(`https://febe23-server-production.up.railway.app/partners/${psikologId}`)
       .catch((err) => {
         console.log("Err", err);
       });
@@ -43,9 +43,6 @@ function Detail() {
           <div className="img-rate">
             <img src={psikologinfo.img} width="400px" alt="" id="img" />
 
-            {/* <span className="fas fa-star" id="ratestar">
-              {psikologinfo.rate}
-            </span> */}
             <Rate
               defaultValue={psikologinfo.rate}
               count={10}

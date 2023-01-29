@@ -11,7 +11,7 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://server-production-5fed.up.railway.app/users/register", {
+      .post("https://febe23-server-production.up.railway.app/users/register", {
         email,
         username,
         password,
@@ -21,6 +21,7 @@ const Register = () => {
         setUsername("");
         setEmail("");
         setPassword("");
+        alert("success register")
       })
       .catch((err) => {
         console.log(err);
@@ -61,8 +62,8 @@ const Register = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button type="submit">Sign Up</button>
           </form>
+            <button type="submit" className="btn btn-primary mt-5">Sign Up</button>
         </div>
 
         {/* <br/>

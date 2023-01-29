@@ -7,6 +7,8 @@ export const SELECTED_PSIKOLOG = "SELECTED_PSIKOLOG";
 export const REMOVE_SELECTED_PSIKOLOG = "REMOVE_SELECTED_PSIKOLOG";
 export const START_SEARCH_PSIKOLOG = "START_SEARCH_PSIKOLOG";
 export const SUCCESS_SEARCH_PSIKOLOG = "SUCCESS_SEARCH_PSIKOLOG";
+export const START_FILTER_PSIKOLOG = "START_FILTER_PSIKOLOG";
+export const SUCCESS_FILTER_PSIKOLOG = "SUCCESS_FILTER_PSIKOLOG";
 
 function fetchStart() {
   return {
@@ -14,12 +16,6 @@ function fetchStart() {
   };
 }
 
-function getDataPsikologs(data) {
-  return {
-    type: SUCCESS_GET_DATA,
-    payload: data,
-  };
-}
 function getDataUsers(data) {
   return {
     type: SUCCESS_GET_DATA,
@@ -52,6 +48,18 @@ export const searchDataPsikolog = (data) => {
     payload: data,
   };
 };
+export const startFilterDataPsikolog = () => {
+  return {
+    type: START_FILTER_PSIKOLOG,
+  };
+};
+
+export const FilterDataPsikolog = (data) => {
+  return {
+    type: SUCCESS_FILTER_PSIKOLOG,
+    payload: data,
+  };
+};
 
 
 
@@ -59,7 +67,7 @@ export const getUsers = () => {
   return async (dispatch) => {
     dispatch(fetchStart());
     const result = await axios.get(
-      "https://server-production-5fed.up.railway.app/users"
+      "https://febe23-server-production.up.railway.app/users"
     );
     dispatch(getDataUsers(result.data));
   };
@@ -73,7 +81,7 @@ export const getPsikologs = () => {
 
     // get data psikolog dengan axios
     const result = await axios.get(
-      "https://server-production-5fed.up.railway.app/partners"
+      "https://febe23-server-production.up.railway.app/partners"
     );
     dispatch(getDataUsers(result.data));
   };
@@ -87,8 +95,22 @@ export const searchPsikologs = (searchTerm) => {
 
     // get data psikolog dengan axios
     const result = await axios.get(
-      `https://server-production-5fed.up.railway.app/partners?search=${searchTerm}`
+      `https://febe23-server-production.up.railway.app/partners/search/${searchTerm}`
     );
     dispatch(searchDataPsikolog(result.data));
   };
 };
+
+export const filterPsikologs = (filterTerm) => {
+  return async (dispatch) => {
+    //ubang isloading menjadi true
+    dispatch(startFilterDataPsikolog());
+
+    // get data psikolog dengan axios
+    const result = await axios.get(
+      `https://febe23-server-production.up.railway.app/partners/lokasi/${filterTerm}`
+    );
+    dispatch(FilterDataPsikolog(result.data));
+  };
+};
+
