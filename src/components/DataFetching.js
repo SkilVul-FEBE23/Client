@@ -5,7 +5,7 @@ import Product from "./product/Product";
 const DataFetching = () => {
     const [posts, setPosts] = useState([]);
     useEffect(() => {
-      axios.get("http://localhost:5555/partners")
+      axios.get("https://febe23-server-production.up.railway.app/partners")
         .then((res) => {
           // console.log(res);
           setPosts(res.data);
